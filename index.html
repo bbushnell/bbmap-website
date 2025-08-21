@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBMap - Official BBTools Suite by Brian Bushnell</title>
+    <meta name="description" content="Official home of BBMap and BBTools - fast, multithreaded bioinformatics tools for DNA/RNA analysis. Created and maintained by Brian Bushnell. Latest version 39.34.">
+    <meta name="keywords" content="BBMap, BBTools, BBDuk, BBMerge, Tadpole, bioinformatics, Brian Bushnell, adapter trimming, read alignment, official, Clumpify, BBNorm, BBCMS, CallVariants, Seal, SendSketch">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bbmap.org/">
+    <meta property="og:title" content="BBMap - Official BBTools Suite">
+    <meta property="og:description" content="Fast, multithreaded bioinformatics tools for DNA/RNA analysis. Over 90 tools for alignment, assembly, QC, and analysis.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bbmap.org/">
+    <meta property="twitter:title" content="BBMap - Official BBTools Suite">
+    <meta property="twitter:description" content="Fast bioinformatics tools by Brian Bushnell. BBDuk, BBMerge, Tadpole and 90+ more tools.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bbmap.org/">
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="Brian Bushnell">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">BBMap</div>
+                <ul class="nav-links">
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#documentation">Documentation</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#citation">Citation</a></li>
+                    <li><a href="https://github.com/bbushnell/BBTools" target="_blank">GitHub</a></li>
+                    <li><a href="https://sourceforge.net/projects/bbmap/" target="_blank">SourceForge</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BBMap & BBTools</h1>
+            <p class="hero-subtitle">The OFFICIAL Suite of Bioinformatics Tools</p>
+            <p class="hero-description">Fast, multithreaded tools for DNA and RNA sequence analysis</p>
+            <p class="author">Created and maintained by Brian Bushnell</p>
+            <div class="hero-buttons">
+                <a href="https://github.com/bbushnell/BBTools" class="btn btn-primary">Download from GitHub</a>
+                <a href="https://sourceforge.net/projects/bbmap/" class="btn btn-primary">Download from SourceForge</a>
+                <a href="#tools" class="btn btn-secondary">Explore Tools</a>
+            </div>
+            <div class="official-box">
+                <strong>Official Repository:</strong> This is the authoritative source for BBTools.
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <div class="container">
+            <h2>Core Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>BBMap</h3>
+                    <p>Fast short read aligner optimized for variant calling from Illumina data. Handles reads up to 6kbp.</p>
+                    <code>bbmap.sh ref=genome.fa in=reads.fq out=mapped.sam</code>
+                </div>
+                <div class="tool-card">
+                    <h3>BBDuk</h3>
+                    <p>Adapter trimming, quality filtering, and contaminant removal. The Swiss Army knife of read processing.</p>
+                    <code>bbduk.sh in=reads.fq out=clean.fq ref=adapters.fa ktrim=r k=23 mink=11 hdist=1 tpe tbo</code>
+                </div>
+                <div class="tool-card">
+                    <h3>BBMerge</h3>
+                    <p>Paired read merging using neural networks for very low false positive rates.</p>
+                    <code>bbmerge.sh in1=r1.fq in2=r2.fq out=merged.fq outu=unmerged.fq</code>
+                </div>
+                <div class="tool-card">
+                    <h3>Tadpole</h3>
+                    <p>Fast error correction and assembly for small genomes, amplicons, and metagenomes.</p>
+                    <code>tadpole.sh in=reads.fq out=corrected.fq mode=correct</code>
+                </div>
+                <div class="tool-card">
+                    <h3>Clumpify</h3>
+                    <p>Reorders reads to reduce file size by 30% on average. Also finds and removes duplicates without alignment.</p>
+                    <code>clumpify.sh in=reads.fq out=clumped.fq.gz</code>
+                </div>
+                <div class="tool-card">
+                    <h3>BBNorm</h3>
+                    <p>Kmer-based normalization to reduce coverage variation for better assemblies.</p>
+                    <code>bbnorm.sh in=reads.fq out=normalized.fq target=100</code>
+                </div>
+                <div class="tool-card">
+                    <h3>BBCMS</h3>
+                    <p>Error correction and low-depth removal for metagenomes with no memory constraints.</p>
+                    <code>bbcms.sh in=reads.fq out=corrected.fq</code>
+                </div>
+                <div class="tool-card">
+                    <h3>SendSketch/BBSketch</h3>
+                    <p>Rapid taxonomic identification by comparing MinHash sketches to remote databases.</p>
+                    <code>sendsketch.sh in=unknown.fa</code>
+                </div>
+                <div class="tool-card">
+                    <h3>Seal</h3>
+                    <p>High-speed alignment-free sequence quantification for RNA-seq using kmer matching.</p>
+                    <code>seal.sh in=reads.fq ref=transcripts.fa rpkm=rpkm.txt</code>
+                </div>
+                <div class="tool-card">
+                    <h3>QuickBin</h3>
+                    <p>Bins metagenomic contigs using coverage and kmer frequencies for metagenome analysis.</p>
+                    <code>quickbin.sh in=contigs.fa out=bins *.sam</code>
+                </div>
+                <div class="tool-card">
+                    <h3>QuickClade</h3>
+                    <p>Fast taxonomic assignment using kmer frequency spectra, optimized for metagenomic bins.</p>
+                    <code>quickclade.sh bins out=taxonomy.tsv</code>
+                </div>
+                <div class="tool-card">
+                    <h3>NovaDemux</h3>
+                    <p>Statistical demultiplexing with error correction for optimal yield and minimal crosstalk.</p>
+                    <code>novademux.sh in=reads.fq out=out_%.fq expected=barcodes.txt</code>
+                </div>
+                <div class="tool-card">
+                    <h3>CallVariants</h3>
+                    <p>Variant calling from SAM/BAM files with multisample VCF support.</p>
+                    <code>callvariants.sh in=mapped.sam ref=genome.fa vcf=vars.vcf</code>
+                </div>
+                <div class="tool-card">
+                    <h3>CallGenes</h3>
+                    <p>Gene prediction for prokaryotes, viruses, and mitochondria. Also finds 16S/18S/23S/5S/tRNAs.</p>
+                    <code>callgenes.sh in=contigs.fa out=genes.gff outa=aminos.faa</code>
+                </div>
+                <div class="tool-card">
+                    <h3>SortByName</h3>
+                    <p>Sort reads by name, length, quality, position, taxonomy, or other keys. Handles any file size.</p>
+                    <code>sortbyname.sh in=reads.fq out=sorted.fq</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why BBTools?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>🚀 Performance</h3>
+                    <p>Multithreaded, memory-efficient algorithms with SIMD support</p>
+                </div>
+                <div class="feature">
+                    <h3>🔧 Comprehensive</h3>
+                    <p>Over 90 tools covering alignment, assembly, QC, and analysis</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Production Ready</h3>
+                    <p>BBMap created by Brian Bushnell; suite expanded at JGI. Cited in thousands of publications</p>
+                </div>
+                <div class="feature">
+                    <h3>🔄 Format Flexible</h3>
+                    <p>Handles FASTQ, FASTA, SAM/BAM, and compressed files seamlessly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="documentation">
+        <div class="container">
+            <h2>Documentation</h2>
+            <div class="doc-links">
+                <a href="https://github.com/bbushnell/BBTools/tree/master/docs" class="doc-card">
+                    <h3>Documentation</h3>
+                    <p>Available guides and usage information</p>
+                </a>
+                <a href="https://github.com/bbushnell/BBTools/blob/master/docs/guides/BBDukGuide.txt" class="doc-card">
+                    <h3>BBDuk Guide</h3>
+                    <p>Adapter trimming and quality filtering guide</p>
+                </a>
+                <a href="https://github.com/bbushnell/BBTools/tree/master/pipelines" class="doc-card">
+                    <h3>Example Pipelines</h3>
+                    <p>Production pipeline examples and scripts</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2>Download BBTools</h2>
+            <div class="download-options">
+                <div class="download-option">
+                    <h3>GitHub</h3>
+                    <p>Latest version repository</p>
+                    <a href="https://github.com/bbushnell/BBTools" class="btn btn-primary">Download from GitHub</a>
+                </div>
+                <div class="download-option">
+                    <h3>SourceForge</h3>
+                    <p>Latest version tar.gz</p>
+                    <a href="https://sourceforge.net/projects/bbmap/" class="btn btn-primary">Download from SourceForge</a>
+                </div>
+            </div>
+            <div class="version-info">
+                <p><strong>Current Version:</strong> 39.34</p>
+                <p><strong>License:</strong> Free for unlimited use</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section id="citation" class="citation">
+        <div class="container">
+            <h2>Citation</h2>
+            <div class="citation-box">
+                <p>If you use BBTools in your research, please cite:</p>
+                <pre>
+Bushnell, B. (2014) BBMap: A Fast, Accurate, Splice-Aware Aligner. 
+Lawrence Berkeley National Laboratory. LBNL-7065E.
+
+BBTools software package: https://bbmap.org
+GitHub: https://github.com/bbushnell/BBTools</pre>
+                <p style="margin-top: 1rem;">For BBMerge specifically:</p>
+                <pre>
+Bushnell B, Rood J, Singer E (2017) BBMerge – Accurate paired 
+shotgun read merging via overlap. PLoS ONE 12(10): e0185056.</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>BBTools by Brian Bushnell | Joint Genome Institute | Lawrence Berkeley National Laboratory</p>
+            <p>This is the official BBTools website.</p>
+        </div>
+    </footer>
+</body>
+</html>
